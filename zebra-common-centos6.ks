@@ -1,13 +1,14 @@
 install
 text
-url --url http://lug.mtu.edu/centos/6/os/x86_64/
+url --url http://mirror.us.leaseweb.net/centos/6/os/x86_64/
 lang en_US.UTF-8
 keyboard us
-network --onboot yes --bootproto dhcp --noipv6 --hostname zebra-common-6.blue-newt.com
+network --onboot yes --bootproto dhcp --noipv6 --hostname zebra-common.blue-newt.com
 rootpw vagrant
 timezone --utc America/Detroit
 repo --name=epel --baseurl=http://dl.fedoraproject.org/pub/epel/6/x86_64/
 repo --name=pg93 --baseurl=http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/
+repo --name=springdale --baseurl=http://springdale.math.ias.edu/data/puias/6/x86_64/os/
 authconfig --enableshadow --passalgo=sha512
 selinux --permissive
 firewall --disabled
@@ -27,18 +28,98 @@ poweroff --eject
 @core
 epel-release
 pgdg-centos93
-openssh-server
-openssh-clients
-wget
+springdale-core
+acl
+atlas-devel
+autoconf
+automake
+bash-completion
+binutils
+bison
+blas-devel
+boost155-devel
+byacc
+cmake28
+colordiff
+cscope
+ctags
 curl
+diffstat
+doxygen
+dstat
+elfutils
+flex
+freetype-devel
+gcc
+gcc-c++
+gcc-gfortran
+gettext
 git
-man
-vim
-ntp
-sudo
+hiredis-devel
+htop
+iftop
+indent
+iotop
 kernel
-kernel-headers
 kernel-devel
+kernel-headers
+lapack-devel
+libevent-devel
+libgfortran
+libpng-devel
+libtool
+libxml2 
+libxml2-devel 
+libxslt
+libxslt-devel
+lshw
+lsof
+ltrace
+lzop
+make
+man
+mosh
+msgpack-devel
+nano
+ncurses
+ncurses-devel
+nginx
+nload
+ntp
+openssh-clients
+openssh-server
+patch
+pbzip2
+pg_top93
+pkgconfig
+postgresql93
+postgresql93-contrib
+postgresql93-devel
+postgresql93-docs
+pv
+python27
+python27-devel
+python27-setuptools
+python-keyczar
+python-psycopg2
+qt-devel
+redhat-rpm-config
+rpm-build
+s3cmd
+strace
+sudo
+sysstat
+tcpdump
+telnet
+tmux
+tree
+vim
+wget
+xfsdump
+xfsprogs
+xterm
+yum-utils
+zeromq3-devel
 %end
 
 %post 
