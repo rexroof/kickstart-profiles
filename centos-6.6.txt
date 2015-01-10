@@ -36,13 +36,17 @@ shutdown
 @core
 openssh-server
 openssh-clients
-wget
 curl
+vim
+%end
+
+# check
 git
 man
-vim
+wget
 ntp
-%end
+# check for 6.6
+
 
 %post
 chkconfig ntpd on
