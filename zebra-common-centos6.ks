@@ -1,6 +1,6 @@
 install
 text
-cdrom
+url --url http://lug.mtu.edu/centos/6/os/x86_64/
 lang en_US.UTF-8
 keyboard us
 network --onboot yes --bootproto dhcp --noipv6 --hostname zebra-common-6.blue-newt.com
@@ -39,7 +39,7 @@ sudo
 kernel
 kernel-headers
 kernel-devel
-end
+%end
 
 %post 
 chkconfig iptables off
