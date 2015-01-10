@@ -8,7 +8,7 @@ rootpw vagrant
 timezone --utc America/Detroit
 repo --name=epel --baseurl=http://dl.fedoraproject.org/pub/epel/6/x86_64/
 repo --name=pg93 --baseurl=http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/
-repo --name=springdale --baseurl=http://puias.princeton.edu/data/puias/6/x86_64/os/
+repo --name=puias --baseurl=http://puias.math.ias.edu/data/puias/computational/6/x86_64/
 authconfig --enableshadow --passalgo=sha512
 selinux --permissive
 firewall --disabled
@@ -23,11 +23,12 @@ bootloader --location=mbr --append="crashkernel=auto rhgb quiet"
 user --name=vagrant --groups=wheel --password=vagrant
 poweroff --eject
 
+# these two would install their respective repositories for future use
+# epel-release
+# pgdg-centos93
 
 %packages --nobase
 @core
-epel-release
-pgdg-centos93
 python27
 python27-devel
 python27-setuptools
