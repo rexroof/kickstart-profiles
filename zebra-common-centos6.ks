@@ -8,7 +8,7 @@ rootpw vagrant
 timezone --utc America/Detroit
 repo --name=epel --baseurl=http://dl.fedoraproject.org/pub/epel/6/x86_64/
 repo --name=pg93 --baseurl=http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/
-repo --name=springdale --baseurl=http://springdale.math.ias.edu/data/puias/6/x86_64/os/
+repo --name=springdale --baseurl=http://puias.princeton.edu/data/puias/6/x86_64/os/
 authconfig --enableshadow --passalgo=sha512
 selinux --permissive
 firewall --disabled
@@ -28,7 +28,10 @@ poweroff --eject
 @core
 epel-release
 pgdg-centos93
-springdale-core
+python27
+python27-devel
+python27-setuptools
+boost155-devel
 acl
 atlas-devel
 autoconf
@@ -37,7 +40,6 @@ bash-completion
 binutils
 bison
 blas-devel
-boost155-devel
 byacc
 cmake28
 colordiff
@@ -97,9 +99,6 @@ postgresql93-contrib
 postgresql93-devel
 postgresql93-docs
 pv
-python27
-python27-devel
-python27-setuptools
 python-keyczar
 python-psycopg2
 qt-devel
