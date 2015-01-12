@@ -128,7 +128,7 @@ chkconfig ip6tables off
 
 mkdir -m 0700 -p /home/vagrant/.ssh
 /usr/bin/curl -k -L -o /home/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
-chmod 400 /home/vagrant/.ssh/authorized_keys
+chmod 600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant:vagrant /home/vagrant
 
 echo "UseDNS no" >> /etc/ssh/sshd_config
