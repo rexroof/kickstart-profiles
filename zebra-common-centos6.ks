@@ -130,6 +130,7 @@ mkdir -m 0700 -p /home/vagrant/.ssh
 /usr/bin/curl -k -L -o /home/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
 chmod 600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant:vagrant /home/vagrant
+restorecon -R /home/
 
 echo "UseDNS no" >> /etc/ssh/sshd_config
 chkconfig sshd on
