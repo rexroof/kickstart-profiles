@@ -29,10 +29,6 @@ poweroff --eject
 
 %packages --nobase
 @core
-python27
-python27-devel
-python27-setuptools
-boost155-devel
 acl
 atlas-devel
 autoconf
@@ -41,6 +37,7 @@ bash-completion
 binutils
 bison
 blas-devel
+boost155-devel
 byacc
 cmake28
 colordiff
@@ -70,6 +67,7 @@ lapack-devel
 libevent-devel
 libgfortran
 libpng-devel
+libselinux-python
 libtool
 libxml2 
 libxml2-devel 
@@ -100,6 +98,9 @@ postgresql93-contrib
 postgresql93-devel
 postgresql93-docs
 pv
+python27
+python27-devel
+python27-setuptools
 python-keyczar
 python-psycopg2
 qt-devel
