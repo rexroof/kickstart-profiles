@@ -152,10 +152,13 @@ BOOTPROTO=dhcp
 EOF1
 
 sed -i 's/^SELINUX=enforcing/SELINUX=permissive/g' /etc/sysconfig/selinux
+cp /etc/sysconfig/selinux /etc/selinux/config
 
 sed -i 's/^timeout=5/timeout=1/g' /boot/grub/grub.conf
 sed -i 's/rhgb quiet//g' /boot/grub/grub.conf
 grub-install /dev/sda
+
+restorecon -R /etc/
 
 rm -f /etc/udev/rules.d/70-persistent-net.rules
 yum clean all
