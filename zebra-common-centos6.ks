@@ -7,6 +7,7 @@ network --onboot yes --bootproto dhcp --noipv6 --hostname zebra-common.blue-newt
 rootpw vagrant
 timezone --utc America/Detroit
 repo --name=epel --baseurl=http://dl.fedoraproject.org/pub/epel/6/x86_64/
+# libevent in postgres repos has bugs conflicting with core packages
 repo --name=pg93 --baseurl=http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/  --excludepkgs=*libevent*
 repo --name=puias --baseurl=http://puias.math.ias.edu/data/puias/computational/6/x86_64/
 authconfig --enableshadow --passalgo=sha512
