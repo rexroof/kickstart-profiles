@@ -19,7 +19,7 @@ part pv.01 --size=1 --grow
 volgroup vg_root --pesize=4096 pv.01
 logvol swap --fstype swap --name=lv_swap --vgname=vg_root --size=1024
 logvol / --fstype=ext4 --name=lv_root --vgname=vg_root --size=1024 --grow
-bootloader --location=mbr --append="crashkernel=auto rhgb quiet"
+bootloader --location=mbr --append="crashkernel=auto"
 user --name=vagrant --groups=wheel --password=vagrant
 poweroff --eject
 
@@ -150,6 +150,12 @@ ONBOOT=yes
 NM_CONTROLLED=no
 BOOTPROTO=dhcp
 EOF1
+
+sed -i 's/^SELINUX=enforcing/SELINUX=permissive/g' /etc/sysconfig/selinux
+
+sed -i 's/^timeout=5/timeout=1/g' /boot/grub/grub.conf
+sed -i 's/rhgb quiet//g' /boot/grub/grub.conf
+grub-install /dev/sda
 
 rm -f /etc/udev/rules.d/70-persistent-net.rules
 yum clean all
